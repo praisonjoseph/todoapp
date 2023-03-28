@@ -1,0 +1,29 @@
+{
+  "name": "todoapp",
+  "version": "1.0.0",
+  "description": "To Do application",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/praisonjoseph/todoapp.git"
+  },
+  "keywords": [
+    "todo"
+  ],
+  "author": "Praison Joseph",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/praisonjoseph/todoapp/issues"
+  },
+  "homepage": "https://github.com/praisonjoseph/todoapp#readme",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.3",
+    "nodemon": "^2.0.22"
+  }
+}
