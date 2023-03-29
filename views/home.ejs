@@ -1,12 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title%></title>
+    <title>
+        <%= title%>
+    </title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/home.css">
 </head>
+
 <body>
-    
+    <h1>
+        <%= title %>
+    </h1>
+
+    <form id="todoForm" action="/create-delete-task" method="post">
+        <div>
+            <label for="fname">Description</label> <br>
+            <input type="text" name="name" placeholder="What do you you need to do?">
+        </div>
+        <!-- <select class="selectpicker" data-style="btn-info" name="selectpicker">
+            <optgroup label="Select Table">
+                <option name="" value="0">Choose a category</option>
+                <option name="table1" value="1">Personal</option>
+                <option name="table1" value="2">School</option>
+                <option name="table2" value="3">Work</option>
+                <option name="table3" value="4">Cleaning</option>
+                <option name="table3" value="5">Other</option>
+            </optgroup>
+        </select> -->
+        <div class="custom-select" style="width:200px;">
+            <select>
+              <option value="0">Choose a category</option>
+              <option value="1">Personal</option>
+              <option value="2">School</option>
+              <option value="3">Work</option>
+              <option value="4">Cleaning</option>
+              <option value="5">Other</option>
+            </select>
+          </div>
+        <div>
+            <label for="start">Due date</label>
+            <input type="date" id="start" name="trip-start" value="2023-03-29" min="2023-03-29" max="2023-12-31">
+        </div>
+        <div>
+            <button type="submit" value="add" name="submit">
+                <i class="fa fa-plus"></i>
+                Add Tasks</button>
+            <button type="submit" value="delete" name="submit">
+                <i class="fa fa-trash"></i>
+                Delete Tasks</button>
+            </a>
+        </div>
+    </form>
+    <div>
+        <% todo_items.forEach(item=> { %>
+            <p>
+                <%= item.description %>
+            </p>
+            <p>
+                <%= item.due_date %>
+            </p>
+            <p>
+                <%= item.category %>
+            </p>
+
+            <% }) %>
+    </div>
+<script src="/js/home.js"></script>
 </body>
+
 </html>
