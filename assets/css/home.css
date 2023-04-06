@@ -1,1 +1,123 @@
 @import "dropdown.css";
+
+:root {
+    /* --blue: #1e90ff;
+    --purple:#a32cc4;
+    --plum:#601a35;
+    --cherry:#990f02;
+    --cerulean:#0492c2; */
+    --white: #ffffff;
+  }
+  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body {
+    background-color: grey;
+    margin: 10px 0
+}
+section {
+    margin: auto 100px;
+    background-color: white;
+}
+
+h1 {
+    text-align: center;
+    padding: 30px 0;
+}
+
+input{
+    border: none;
+    font-size: 20px;
+    outline: none;
+    padding: 10px 0;
+}
+input[type="text"] {
+    width: 80%;
+}
+
+#description {
+    display: block;
+    padding-top: 5px;
+}
+.arrange {
+    padding: 0 20px;
+    display: inline-block
+}
+
+#category {
+    width: 50%;
+    border-right: 1px solid black;
+    padding-top: 5px;
+}
+
+#taskbutton {
+    margin: 20px 0;
+    text-align: center;
+}
+
+#taskbutton > button {
+    width: 160px;
+    margin: 0 10px;
+    border-radius: 0.3rem;
+    border: none;
+    color: var(--white);
+    padding: 15px 0;
+    font-size: 1rem;
+}
+
+i {
+    padding-right: 5px;
+}
+button:nth-child(1) {
+    background-color: rgb(56, 50, 50);
+}
+button:nth-child(2) {
+    background-color: rgb(169, 64, 64);
+}
+
+#output_list {
+    margin: 0 20px;
+}
+
+#data {
+    display: inline-block;
+    margin-left: 40%;
+    width: 35vw;
+
+}
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card {
+    padding: 10px 0;
+}
+
+.card > div > label {
+    display: inline-block;
+    margin-left: 3rem;
+}
+p span {
+    font-size: 0.7rem;
+}
+
+.card input[type=checkbox]:checked + label.todochecklist{
+    text-decoration: line-through;
+    color: grey;
+  }
+
+.category-color {
+    height: 40px;
+    width: 5em;
+    color: var(--white);
+    /* background-color: var(--blue); */
+    display: grid;
+    place-items: center;
+}
+
+  

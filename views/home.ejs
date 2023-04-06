@@ -14,64 +14,80 @@
 </head>
 
 <body>
-    <h1>
-        <%= title %>
-    </h1>
+    <section>
+        <h1>
+            <%= title %>
+        </h1>
 
-    <form id="todoForm" action="/create-delete-task" method="post">
-        <div>
-            <label for="fname">Description</label> <br>
-            <input type="text" name="name" placeholder="What do you you need to do?">
-        </div>
-        <!-- <select class="selectpicker" data-style="btn-info" name="selectpicker">
-            <optgroup label="Select Table">
-                <option name="" value="0">Choose a category</option>
-                <option name="table1" value="1">Personal</option>
-                <option name="table1" value="2">School</option>
-                <option name="table2" value="3">Work</option>
-                <option name="table3" value="4">Cleaning</option>
-                <option name="table3" value="5">Other</option>
-            </optgroup>
-        </select> -->
-        <div class="custom-select" style="width:200px;">
-            <select>
-              <option value="0">Choose a category</option>
-              <option value="1">Personal</option>
-              <option value="2">School</option>
-              <option value="3">Work</option>
-              <option value="4">Cleaning</option>
-              <option value="5">Other</option>
-            </select>
-          </div>
-        <div>
-            <label for="start">Due date</label>
-            <input type="date" id="start" name="trip-start" value="2023-03-29" min="2023-03-29" max="2023-12-31">
-        </div>
-        <div>
-            <button type="submit" value="add" name="submit">
-                <i class="fa fa-plus"></i>
-                Add Tasks</button>
-            <button type="submit" value="delete" name="submit">
-                <i class="fa fa-trash"></i>
-                Delete Tasks</button>
-            </a>
+        <form id="todoForm" action="/create-task" method="post">
+            <hr>
+            <div id="description" class="arrange">
+                <label for="name">Description</label> <br>
+                <input type="text" id="name" name="description" placeholder="What do you you need to do?">
+            </div>
+            <hr>
+            <div id="category" class="arrange">
+                <label for="custom">Category</label> <br>
+                <div class="custom-select">
+                    <select id="custom" name="category">
+                        <option value="0">Choose a category</option>
+                        <option value="Personal">Personal</option>
+                        <option value="School">School</option>
+                        <option value="Work">Work</option>
+                        <option value="Cleaning">Cleaning</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+            <div id="dateid" class="arrange">
+                <label for="start">Due date</label> <br>
+                <input type="date" id="start" name="due_date">
+            </div>
+            <hr>
+            <div id="taskbutton">
+                <button type="submit" value="add" name="submit">
+                    <i class="fa fa-plus"></i>
+                    ADD TASK</button>
+                <button type="submit" formaction="/delete-task" value="delete" name="submit">
+                    <i class="fa fa-trash"></i>
+                    DELETE TASKS</button>
+            </div>
+        
+        
+        <div id="output_list">
+            <hr>
+            <% todo_items.forEach(item=> { %>
+                <div class="card">
+                    <div>
+                        <input type="checkbox" id ="todocheck" name="todocheck" class="list_items" value = "<%= item._id %>" >
+                        <label for="todocheck" class="todochecklist">
+                            <p>
+                                <%= item.description %>
+                            </p>
+                            <p>
+                                <span><i class="far fa-calendar-alt"></i>
+                                    <%= item.due_date %>
+                                </span>
+                            </p>
+                        </label>
+                    </div>
+                    <div class="category-color">
+                        <%= item.category %>
+                    </div>
+                </div>
+                <hr>
+
+                <% }) %>
         </div>
     </form>
-    <div>
-        <% todo_items.forEach(item=> { %>
-            <p>
-                <%= item.description %>
-            </p>
-            <p>
-                <%= item.due_date %>
-            </p>
-            <p>
-                <%= item.category %>
-            </p>
+        <script src="/js/home.js"></script>
 
-            <% }) %>
-    </div>
-<script src="/js/home.js"></script>
+    </section>
+    <script>
+
+
+
+    </script>
 </body>
 
 </html>
